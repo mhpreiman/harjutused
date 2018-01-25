@@ -9,62 +9,143 @@
   <title>(ülesanded)</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 <style>
-* {color: dimgray; font-family: 'Open Sans', sans-serif; font-size:16px;}
-h2 {font-size:25px; padding: 10px;}
-a {text-decoration: none; }
-span a:first-of-type {width: 300px; display:inline-block;}
-span a:not(:first-of-type) {font-size: 13px; padding:5px; display:inline-block;}
-span { margin:30px 10px; }
-#content {margin-left:150px; padding:20px;}
-.hide {display:none;}
+* {
+	font-family: 'Open Sans', sans-serif; 
+	font-size:16px; 
+	color: dimgray;
+	text-decoration: none;
+}
+h2 {
+	font-size:25px; 
+	padding: 2px 4px 10px 4px; 
+}
+#content { 
+	padding: 70px 190px;
+	margin-top: 20px;
+	display: flex;  
+	flex-wrap: wrap;  
+	justify-content:space-around; 
+}
+.subject {
+	display: inline-block;  
+	min-height: 180px; 
+	margin-bottom: 80px ; 
+	padding: 20px 50px 60px 50px;
+	box-shadow: 1px 1px 6px 1px #d3d3d321;
+	border-radius: 1px;
+}
+.subject:last-of-type {
+	margin-right: auto;
+}
+span a:first-of-type { 
+	width: 280px; 
+	display:inline-block; 
+}
+span a:not(:first-of-type) { 
+	font-size: 13px; 
+	padding:5px; 
+	display:inline-block; 
+}
+span { 
+	margin: 30px 10px; 
+}
+
+
+
 </style>
   </head>
 <body>
   <div id="content">
-	<div class="subject1">
-	<h2>jQuery</h2>
-	<span>
-		<a target="_blank" href="jquery-tunnid/animatsioonid/index.html">Animatsioonid</a>
-		<a target="_blank" href="jquery-tunnid/animatsioonid/js/script.js">javascript</a>
-	</span>
-	<br>
-	<span>
-		<a target="_blank" href="jquery-tunnid/dom1/index.html">Dom1</a>
-		<a target="_blank" href="jquery-tunnid/dom1/js/script.js">javascript</a>
-	</span>
-	<br>
-	<span>
-		<a target="_blank" href="jquery-tunnid/dom2/index.html">Dom2</a>
-		<a target="_blank" href="jquery-tunnid/dom2/js/script.js">javascript</a>
-	</span>
-	<br>
-	<span>
-		<a target="_blank" href="jquery-tunnid/elementide%20selektorid/index.html">Elementide selektorid</a>
-		<a target="_blank" href="jquery-tunnid/elementide%20selektorid/js/script.js">javascript</a>
-	</span>
-	<br>
-	<span>
-		<a target="_blank" href="jquery-tunnid/sündmused1/index.html">Sündmused1</a>
-		<a target="_blank" href="jquery-tunnid/sündmused1/js/script.js">javascript</a>
-	</span>
-	<br>
-	<span>
-		<a target="_blank" href="jquery-tunnid/sündmused2/index.html">Sündmused2</a>
-		<a target="_blank" href="jquery-tunnid/sündmused2/js/script.js">javascript</a>
-	</span>	
-	<br>
-	<span>
-		<a target="_blank" href="jquery-tunnid/ajax/index.html">AJAX</a>
-		<a target="_blank" href="jquery-tunnid/ajax/js/script.js">javascript</a>
-	</span>
-	<br>
+	<div class="subject ">
+		<h2>jQuery</h2>
+		<span>
+			<a target="_blank" href="jquery-tunnid/animatsioonid/index.html">Animatsioonid</a>
+			<a target="_blank" href="jquery-tunnid/animatsioonid/js/script.js">JS</a>
+		</span>
+		<br>
+		<span>
+			<a target="_blank" href="jquery-tunnid/dom1/index.html">Dom1</a>
+			<a target="_blank" href="jquery-tunnid/dom1/js/script.js">JS</a>
+		</span>
+		<br>
+		<span>
+			<a target="_blank" href="jquery-tunnid/dom2/index.html">Dom2</a>
+			<a target="_blank" href="jquery-tunnid/dom2/js/script.js">JS</a>
+		</span>
+		<br>
+		<span>
+			<a target="_blank" href="jquery-tunnid/elementide%20selektorid/index.html">Elementide selektorid</a>
+			<a target="_blank" href="jquery-tunnid/elementide%20selektorid/js/script.js">JS</a>
+		</span>
+		<br>
+		<span>
+			<a target="_blank" href="jquery-tunnid/sündmused1/index.html">Sündmused1</a>
+			<a target="_blank" href="jquery-tunnid/sündmused1/js/script.js">JS</a>
+		</span>
+		<br>
+		<span>
+			<a target="_blank" href="jquery-tunnid/sündmused2/index.html">Sündmused2</a>
+			<a target="_blank" href="jquery-tunnid/sündmused2/js/script.js">JS</a>
+		</span>	
+		<br>
+		<span>
+			<a target="_blank" href="jquery-tunnid/ajax/index.html">AJAX</a>
+			<a target="_blank" href="jquery-tunnid/ajax/js/script.js">JS</a>
+		</span>
 	</div>
 	<br>
 	<br>
 	<br>
-	<div class="subject2 ">
-	<h2>Responsive veebilehed</h2>
-	&lt;links&gt;
+	<div class="subject">
+		<h2>Responsive veebilehed</h2>
+		<span>
+			<a target="_blank" href="responsive-tunnid/verde">Verde</a>
+		</span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="subject">
+		<h2>Funktsionaalne PHP</h2>
+		<span>
+			<a target="_blank" href="php-funktsionaalne">Funktsionaalne PHP</a>
+		</span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="subject">
+		<h2>Objekt-orienteeritud PHP</h2>
+		<span>
+			<a target="_blank" href="php-objekt-orienteeritud">Objekt-orienteeritud PHP</a>
+		</span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="subject">
+		<h2>Veebirakenduste loomise alused</h2>
+		<span>
+			<a target="_blank" href="offline-rakendused">Offline rakendus</a>
+		</span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="subject">
+		<h2>Dokumenteerimise alused</h2>
+		<span>
+			<a target="_blank" href="dokumenteerimise-alused">ylesanne</a>
+		</span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="subject">
+		<h2>E-portfoolio koostamine</h2>
+		<span>
+			<a target="_blank" href="e-portfoolio">Portfoolio</a>
+		</span>
 	</div>
  </div>
 </body>
