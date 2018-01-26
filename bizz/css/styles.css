@@ -1,0 +1,66 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    height: 400px;
+    background: url('../images/clouds.jpg') center center no-repeat;
+    background-size: cover;
+    padding: 0;
+}
+.jumbotron .tagline {
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    font-size: 42x;
+}
+
+.jumbotron [class*="col-"] {
+    padding-top: 55px;
+    padding-bottom: 15px;
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border:  1px solid rgba(86,61,124,.2);
+    overflow: hidden;
+    height: 400px;
+}
+
+.box {
+    min-height: 200px;
+    color: #434955;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.box img {
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: block;
+}
+.box-heading {
+    max-height: 120px;
+    overflow: hidden;
+}
+.box-body {
+    padding: 0 10px 20px 10px;
+    border: 2px solid #eaedf2;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-right form {
+        display: none;
+    }
+}
+
+@media (max-width: 568px) {
+    .jumbotron {
+        background: url('../images/clouds.jpg') -500px 0 no-repeat;
+        text-align: center;
+    }
+    footer {
+        text-align: center;
+    }
+}
