@@ -14,17 +14,29 @@ for($i = 1; $i <= 10; $i++){
 }
 
 
+
 //While tsükkel
 $kord = 1;
 while($kord <= 5){
-    echo '<i>'.$kord++.'</i>';
+    echo $kord++;
 }
 echo '<br>';
 
 
-//Continue to skip loops
-$kord = 0;
-while($kord++ <= 4){
+
+//Continue to skip current loop
+$kord = 1;                  //iteration ($kord++) before looping causes 1 to be skipped
+while($kord++ <= 5){
     if($kord == 3) continue;
-    echo '<i>'.$kord.'</i>';
+    echo $kord;
 }
+echo '<br>';
+
+
+
+//Do-while
+do {
+    if($kord > 8) break;
+    echo $kord++;
+}
+while($kord <= 10);
