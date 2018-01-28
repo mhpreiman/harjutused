@@ -22,3 +22,20 @@ elseif ($vanus > 19 and $vanus < 65){
 else{
     echo 'Meie senioor on '.$vanus.' aasta vanune';
 }
+echo '<br><br>';
+
+
+//Switch operaator
+$sokolaad = 'Kalev';
+
+switch ($sokolaad):
+    case 'Kalev':
+        echo $sokolaad.' on super šokolaad';
+        break;
+    case 'Kinder':
+        echo $sokolaad.' on laste lemmik';
+        break;
+    default:
+        echo $sokolaad.' sobib, kui muud pole';
+        break;
+ endswitch;
