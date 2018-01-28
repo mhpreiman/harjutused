@@ -11,6 +11,11 @@ Koosta funktsioon genereeriVarv, mis genereerib juhusliku varvi kujul #XXXXXX ni
 saadab selle funktsioonile valjastaTabel
 */
 
+/*
+Koosta funktsioon tekstiTabel, mis võtab neli sõna esindavat parameetrit
+Väljasta üheveeruline tabel, mille igas reas on üks sõna
+*/
+
 
 //Tabel
 function valjastaTabel($read, $veerud){
@@ -44,3 +49,24 @@ function genereeriVarv(){
     }
     return $varv;
 }
+
+
+echo '<br>';
+
+
+
+
+
+function tekstiTabel($sona1, $sona2, $sona3, $sona4){
+    $sonad = func_get_args();
+
+    echo '<table border="1">';
+
+    foreach($sonad as $sona) {
+        echo '<tr><td>'.$sona.'</td></tr>';
+    }
+
+    echo '</table>';
+}
+
+tekstiTabel('See', 'on', 'minu', 'tabel');
