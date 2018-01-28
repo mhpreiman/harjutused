@@ -39,3 +39,11 @@ switch ($sokolaad):
         echo $sokolaad.' sobib, kui muud pole';
         break;
  endswitch;
+
+echo '<br><br>';
+
+ //Ternary operaator (shorthand conditional)
+$pidu = 'halb';
+$pidutseme = ($pidu == 'hea') ? 'Lähme peole!' : 'Istume kodus.';
+
+echo $pidutseme.'<br>';
