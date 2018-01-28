@@ -12,3 +12,10 @@ for($i = 1; $i <= 10; $i++){
     }
     echo '<p style="color: '.$varv.';">'.$i.'</p>';
 }
+
+
+//While tsükkel
+$kord = 1;
+while($kord <= 5){
+    echo '<i>'.$kord++.'</i>';
+}
