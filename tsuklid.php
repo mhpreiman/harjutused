@@ -19,3 +19,12 @@ $kord = 1;
 while($kord <= 5){
     echo '<i>'.$kord++.'</i>';
 }
+echo '<br>';
+
+
+//Continue to skip loops
+$kord = 0;
+while($kord++ <= 4){
+    if($kord == 3) continue;
+    echo '<i>'.$kord.'</i>';
+}
