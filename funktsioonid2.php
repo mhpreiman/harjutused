@@ -59,3 +59,33 @@ for ($i = 1; $i <= 3; $i++){
 
 echo '<br>';
 
+
+
+/*
+Koosta funktsioon otsiNumber, mille parameetriteks
+juhuslik arv ja staatiline arv.
+Leia mitu korda staatiline arv esineb suvalises numbris ning prindi see
+(nt arv 5 numbris 41515 2-korda)
+
+Stringi-lahendused keelatud
+*/
+
+
+function otsiNumber($juhuArv, $staatilineArv){
+    echo $staatilineArv.' esineb arvus '.$juhuArv;
+    $esinemisKorrad = 0;
+
+    while($juhuArv != 0){
+        $arv = $juhuArv % 10;
+//echo '<br>'.$arv;
+        if($arv == $staatilineArv)
+            $esinemisKorrad++;
+        $juhuArv /= 10;
+        settype($juhuArv, 'integer');
+
+    }
+    echo ' '.$esinemisKorrad.' arv korda<br>';
+}
+otsiNumber(1684214574, 1);             //CAN'T BE LONGER BECAUSE OF OVERFLOW
+otsiNumber(1684214574, 5);
+otsiNumber(1684214574, 4);
