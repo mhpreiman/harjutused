@@ -71,8 +71,6 @@ array(
         'status' => 'seisund'
     )
 )*/
-
-
 $raamatud = array(
     array('title' => 'Söekaevurid',
         'author' => 'E. Zola',
@@ -133,3 +131,19 @@ function raamatuTabel($raamatud) {
 raamatuTabel($raamatud);
 
 
+echo '<hr>';
+
+
+
+//Otsi raamatuid
+function otsiRaamat($raamatud, $staatus) {
+
+    $leitudRaamatud = array();
+    foreach($raamatud as $raamat) {
+        ($raamat['status'] == $staatus) ? $leitudRaamatud[] = $raamat : null;
+    }
+    return $leitudRaamatud;
+}
+
+$raamatudKohal = otsiRaamat($raamatud, 'sees');
+raamatuTabel($raamatudKohal);
