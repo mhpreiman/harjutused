@@ -138,3 +138,36 @@ function vahetaMinMax(&$massiiv){
 vahetaMinMax($arvudeMassiiv);
 echo 'Pärast: ';
 valjastaMassiiv($arvudeMassiiv);
+
+
+
+/*
+Funktsioon elementideKorrutis, parameetriks täisarvude massiiv,
+Korrutada paarisarvulise indeksiga arvud, mis on suuremad nullist.
+Kuju:  Tulemus: 1 * 6 * 5 = 30
+
+Massiiv katsetamiseks :       1, 0, 6, 0, 0, 3, 5
+*/
+function elementideKorrutis($massiiv){
+    $tulemus = 1;
+    $korrutamisMark = 0;
+    echo 'Tulemus: ';
+
+    for($i = 0; $i < count($massiiv); $i++){
+
+        if($massiiv[$i] > 0 and $i % 2 == 0){
+
+            $tulemus *= $massiiv[$i];
+
+            if($korrutamisMark != 0){
+                echo ' ⋅ '.$massiiv[$i];
+            } else {
+                echo $massiiv[$i];
+                $korrutamisMark = 1;
+            }
+        }
+    }
+    echo ' = '.$tulemus;
+}
+echo '<hr>';
+elementideKorrutis(array(1, 0, 6, 0, 0, 3, 5));
