@@ -27,7 +27,6 @@ echo '<hr>';
 Funktsioon looMassiiv, parameetriks elementide arv.
 Loob ja tagastab juhuslikest täisarvudest (0-99) koosneva massiivi.
 */
-
 function looMassiiv($elementideArv){
     $massiiv = array();
 
@@ -49,7 +48,6 @@ Funktsioon valjastaMassiiv, parameetriks massiiv,
 mille elemendid printida üherealise tabeli kujul.
 Kasutada foreach tsüklit.
 */
-
 function valjastaMassiiv($massiiv){
 
     echo '<table border=1><tr>';
@@ -58,6 +56,31 @@ function valjastaMassiiv($massiiv){
         echo '<td>'.$element.'</td>';
     }
 
-    echo '</tr></table>';
+    echo '</tr></table><br>';
 }
 valjastaMassiiv($arvudeMassiiv);
+
+
+
+/*
+Funktsioon loo2DMassiiv, parameetriks ridade ja veergude arv,
+mille abil luua 2D massiivi (associative array)
+*/
+function loo2DMassiiv($ridadeArv, $veergudeArv){
+    $massiiv = array();
+
+    for($r = 0; $r < $ridadeArv; $r++){
+        $massiiv[] = array();
+
+        for ($c = 0; $c < $veergudeArv; $c++){
+            $juhuarv = rand(0,99);
+            $massiiv[$r][] = $juhuarv;
+        }
+    }
+    return $massiiv;
+}
+$arvudeMassiiv2D = loo2DMassiiv(3,5);
+
+echo '<pre>';
+print_r($arvudeMassiiv2D);
+echo '</pre>';
