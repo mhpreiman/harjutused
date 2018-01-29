@@ -96,24 +96,45 @@ vahetab nende asukohad (kontrolli funktsiooniga valjastaMassiiv).
 Testimiseks võib kasutada funktsiooniga looMassiiv loodud massiivi.
 */
 //Messy version
-function vahetaMinMax($massiiv){
-    if (is_array($massiiv)) {
-//        var_dump($massiiv);
-        echo '<pre>Enne: <br>';     print_r($massiiv).'</pre>';
+//function vahetaMinMax($massiiv){
+//    if (is_array($massiiv)) {
+////        var_dump($massiiv);
+//        echo '<pre>Enne: <br>';     print_r($massiiv).'</pre>';
+//
+//        foreach($massiiv as  $index=> $value) {
+////            echo '<hr>value '.$index.'&nbsp; index '.$value;
+//            $getMaxIndex = array_search(max($massiiv),$massiiv);
+//            $getMinIndex = array_search(min($massiiv), $massiiv);
+//            $maxValue = $massiiv[$getMaxIndex];
+//            $minValue = $massiiv[$getMinIndex];
+//            $massiiv[$getMaxIndex] = $minValue;
+//            $massiiv[$getMinIndex] = $maxValue;
+//        }
+////        var_dump($massiiv);
+//        echo '<br><pre>Pärast: <br>';   print_r($massiiv).'</pre>';
+//    }
+//}
+//vahetaMinMax($arvudeMassiiv);
+////valjastaMassiiv(vahetaMinMax(looMassiiv(5)));
 
-        foreach($massiiv as  $index=> $value) {
-//            echo '<hr>value '.$index.'&nbsp; index '.$value;
-            $getMaxIndex = array_search(max($massiiv),$massiiv);
-            $getMinIndex = array_search(min($massiiv), $massiiv);
-            $maxValue = $massiiv[$getMaxIndex];
-            $minValue = $massiiv[$getMinIndex];
-            $massiiv[$getMaxIndex] = $minValue;
-            $massiiv[$getMinIndex] = $maxValue;
+
+
+echo 'Enne: ';
+valjastaMassiiv($arvudeMassiiv);
+
+//Simpler version
+function vahetaMinMax(&$massiiv){
+    $min = min($massiiv);
+    $max = max($massiiv);
+
+    for($i = 0; $i < count($massiiv); $i++){
+        if($massiiv[$i] == $min)
+            $massiiv[$i] = $max;
+        else if($massiiv[$i] == $max){
+            $massiiv[$i] = $min;
         }
-//        var_dump($massiiv);
-        echo '<br><pre>Pärast: <br>';   print_r($massiiv).'</pre>';
     }
 }
 vahetaMinMax($arvudeMassiiv);
-//valjastaMassiiv(vahetaMinMax(looMassiiv(5)));
-
+echo 'Pärast: ';
+valjastaMassiiv($arvudeMassiiv);
