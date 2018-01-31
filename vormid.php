@@ -53,37 +53,56 @@ function kontrolliArv(){
 
     session_start();
 
-    //Sets oigeVastus
-    if (!isset($_SESSION['oigeVastus']) || isset($_POST["alustaUut"])) {
-        $_SESSION['oigeVastus'] = rand(1,10);
+    //Alusta mängu uuesti
+    function uusMang() {
+        $_SESSION['eelmineVastus'] = $_SESSION['oigeVastus'];
+        if (isset($_SESSION['katseteArv']))     unset($_SESSION['katseteArv']);
+        if (isset($_SESSION['oigeVastus']))     unset($_SESSION['oigeVastus']);
+        //session_destroy();      //exit;
+    }
+
+    //Defineeri õige vastus JA eelmine vastus
+    if (!isset($_SESSION['oigeVastus']) || !isset($_SESSION['eelmineVastus'])) {
+        $_SESSION['oigeVastus'] = rand(1, 15);
+
+        //Defineeri eelmine vastus (on script start)
+        if(!isset($_SESSION['eelmineVastus'])) {
+            $_SESSION['eelmineVastus'] = $_SESSION['oigeVastus'];
+        }
+
+        //Kindlusta et kaks järjestikust õiget vastust poleks samad
+        while ($_SESSION['oigeVastus'] == $_SESSION['eelmineVastus'])
+            $_SESSION['oigeVastus'] = rand(1, 15);
     }
     $oigeVastus = $_SESSION['oigeVastus'];
 
-    if(!empty($_POST) && !isset($_POST["alustaUut"])){
-        $kasutajaArv = $_POST['kasutajaVastus'];
+    //Alusta mängu uuesti
+    if(isset($_POST["alustaUut"]))
+        uusMang();
 
+    //Kasutaja ei sisestanud numbrit
+    if(!empty($_POST)){
         if(empty($_POST['kasutajaVastus'])){
             echo 'Arv peab olema sisestatud!<br>';
             exit;
-        }
-        else
+        } else {
+            $kasutajaArv = $_POST['kasutajaVastus'];
+
             (!isset($_SESSION['katseteArv'])) ? $_SESSION['katseteArv'] = 1 : $_SESSION['katseteArv']++ ;
 
-        if($kasutajaArv < $oigeVastus){
-            echo 'Õige arv on suurem!<br>';
-        }
-        if($kasutajaArv > $oigeVastus){
-            echo 'Õige arv on väiksem!<br>';
-        }
-        if(abs($kasutajaArv - $oigeVastus) <= 5){
-            if($kasutajaArv == $oigeVastus){
-                echo 'Õige vastus on '.$oigeVastus.'!<br> Arvasid selle ära '.$_SESSION['katseteArv'].' korraga!<br>';
-                unset($_SESSION['katseteArv']);
-                unset($_SESSION['oigeVastus']);
-                session_destroy() ;
-                exit;
+            if($kasutajaArv < $oigeVastus){
+                echo 'Õige arv on suurem!<br>';
             }
-            echo 'Sinu arv on <i>peaaegu</i> õige...<br>';
+            if($kasutajaArv > $oigeVastus){
+                echo 'Õige arv on väiksem!<br>';
+            }
+            if(abs($kasutajaArv - $oigeVastus) <= 5){
+                if($kasutajaArv == $oigeVastus){
+                    echo 'Õige vastus on '.$oigeVastus.'!<br> Arvasid selle ära '.$_SESSION['katseteArv'].' korraga!<br>';
+                    uusMang();
+                } else
+                    echo 'Sinu arv on <i>peaaegu</i> õige...<br>';
+            }
         }
     }
 }
