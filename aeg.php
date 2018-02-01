@@ -39,5 +39,21 @@ function vorm() {
         ';
 }
 
+
+function andmeteKontroll() {
+    $kontroll = false;
+    if (!empty($_POST)) {
+        foreach ($_POST as $voti => $vaartus) {
+            if (empty($_POST[$voti])) {
+                echo 'Andmed peavad olema sisestatud!<br>';
+                exit;
+            }
+        }
+        $kontroll =  true;
+    }
+    return $kontroll;
+}
+
+
 vorm();
 
