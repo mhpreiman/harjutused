@@ -54,6 +54,21 @@ function andmeteKontroll() {
     return $kontroll;
 }
 
+function ajaTootlus($paev, $kuu, $aasta){
+    if(andmeteKontroll()){
+        $aegUnixTimestamp = mktime(0,0,0, $kuu, $paev, $aasta);
+        $aeg = date('Y-m-d', $aegUnixTimestamp);
+    }
+    return $aeg;
+}
+
+function sunniPaev($kuupaev){
+    if(andmeteKontroll()){
+        $aegUnixTimestamp = strtotime($kuupaev);
+        $sunnikuupaev = date('Y-m-d', $aegUnixTimestamp);
+    }
+    return $sunnikuupaev;
+}
 
 vorm();
 
