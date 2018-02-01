@@ -18,13 +18,13 @@ function andmeteKontroll() {
 function salvestaFaili($failinimi) {
     if (andmeteKontroll()) {
         if (file_exists($failinimi) and is_file($failinimi) and is_writable($failinimi)) {
-            echo 'Faili saab salvestada<br>';
+            echo 'Salvestan...<br>';
             $fail = fopen($failinimi, 'a');
             foreach ($_POST as $vaartus){
                 fwrite($fail, $vaartus." ");
             }
             fwrite($fail, "\n");
-            echo 'Andmed on salvestatud<br>';
+            echo 'Andmed salvestatud!<br><br>';
             echo '<a href="valjund.php">Vaata faili sisu</a>';
             fclose($fail);
         } else {
