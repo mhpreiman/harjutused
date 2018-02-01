@@ -72,3 +72,12 @@ function sunniPaev($kuupaev){
 
 vorm();
 
+//Without expicitly calling andmeteKontroll() before trying to echo POST variables that haven't been sent to server (eg empty form),
+//PHP throws an error of undefined variables EVEN THOUGH ajaTootlus() also invokes andmeteKontroll()
+//because the line below tries to echo those variables regardless they exist or not
+if(andmeteKontroll()){
+    echo 'Tere, '.$_POST['eesnimi'].' '.$_POST['perenimi'].', sinu sünnikuupäev on '.ajaTootlus($_POST['paev'], $_POST['kuu'], $_POST['aasta']).'<br><br>';
+    //Ühest lahtrist
+    echo 'Lühemast lahtrist: '.sunniPaev($_POST["sunnikuupaev"]);
+}
+
