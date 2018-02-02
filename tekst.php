@@ -6,8 +6,7 @@ class tekst {
     var $sonad = 'tere';
 
     //OBJECT CONSTRUCT
-    public function __construct($sonad)
-    {
+    public function __construct($sonad = '') {
         $this->maaraTekst($sonad);
     }
 
