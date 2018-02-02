@@ -7,8 +7,4 @@ require_once 'tekst.php';
 
 $minuTekst = new tekst('Hi!');    //uus objekt (instants) konstruktori põhjal
 
-
-
-echo '<pre>';
-print_r($minuTekst);
-echo '</pre>';
+$minuTekst->prindiTekst();        //objekti meetod
