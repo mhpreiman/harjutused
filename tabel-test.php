@@ -13,6 +13,5 @@ $minuTabel->lisaRidaPealkiri(array('Pealkiri 1'=> 'sisu9',     //pealkirjad ja s
                                         'Pealkiri 2'=> 'sisu10',
                                         'Pealkiri 4'=> 'sisu12'));
 
-echo '<pre>';
-print_r($minuTabel);
-echo '</pre>';
+
+$minuTabel->prindiTabel();
