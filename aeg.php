@@ -78,6 +78,8 @@ vorm();
 if(andmeteKontroll()){
     echo 'Tere, '.$_POST['eesnimi'].' '.$_POST['perenimi'].', sinu sünnikuupäev on '.ajaTootlus($_POST['paev'], $_POST['kuu'], $_POST['aasta']).'<br><br>';
     //Ühest lahtrist
-    echo 'Lühemast lahtrist: '.sunniPaev($_POST["sunnikuupaev"]);
+    echo 'Lühemast lahtrist: '.sunniPaev($_POST["sunnikuupaev"]).'<br><br><br>';
 }
+else
+    exit;
 
