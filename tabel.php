@@ -18,4 +18,18 @@ class tabel {
         array_push($this->tabeliSisu, $rida);
         return true;
     }
+
+    //Lisa pealkirjad ja sisu korraga
+    function lisaRidaPealkiri($readPealkirjad){
+        $rida = array();
+
+        //Kui konstruktori $pealkiri võrdub samal indeksil saadetud massiivi ($readPealkirjad) võtmega...
+        //      saadetud massiiv ja konstruktori pealkiri võtmeks:   $readPealkirjad[$pealkiri]
+        //..siis salvesta see uude massiivi $rida
+        foreach ($this->pealkirjad as $pealkiri){
+            $rida[] = $readPealkirjad[$pealkiri];
+        }
+        array_push($this->tabeliSisu, $rida);
+        return true;
+    }
 }
