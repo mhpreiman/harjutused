@@ -2,8 +2,10 @@
 
 require_once 'tekst.php';
 
-$minuTekst = new tekst();       //uus objekt (instants)
-$minuTekst->maaraTekst('Hi!');  //uue objekti meetod
+//$minuTekst = new tekst();       //uus objekt (instants)
+//$minuTekst->maaraTekst('Hi!');  //uue objekti meetod
+
+$minuTekst = new tekst('Hi!');    //uus objekt (instants) konstruktori põhjal
 
 
 
