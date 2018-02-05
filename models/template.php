@@ -65,11 +65,11 @@ class template
 
 
     // Add more variables to view       if var exists, simply concatenate the new value
-    function add($viewVars, $value){
-        if(!isset($this->vars[$viewVars])){         //new var
-            $this->set($viewVars, $value);
+    function add($viewVar, $value){
+        if(!isset($this->viewVars[$viewVar])){         //new var
+            $this->set($viewVar, $value);
         } else {
-            $this->vars[$viewVars] = $this->vars[$viewVars].$value;     //preexisting var
+            $this->viewVars[$viewVar] = $this->viewVars[$viewVar].$value;     //preexisting var
         }
     }
 
