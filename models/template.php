@@ -2,6 +2,9 @@
 
 class template
 {
+    // Variables and methods set/triggered on correct
+    // object initiliazation:       $view   $content        loadFile()  readFile()
+    // Separately called:           $viewVars   $content    set()   add()   parse
     var $view = '';
     var $content = false;
     var $viewVars = array();
@@ -13,8 +16,8 @@ class template
     }
 
 
-    // Get view's contents
-    function readFile($view){
+    // Get and store view's contents        to $content
+    function readFile($view){           //$view - filename from loadFile()
 //        $fp = fopen($f, 'rb');
 //        $this->content = fread($fp, filesize($f));
 //        fclose($fp);
@@ -41,7 +44,7 @@ class template
 
         foreach ($viewForms as $viewForm) {
             if(file_exists($viewForm) and is_file($viewForm) and is_readable($viewForm)){
-                $this->readFile($viewForm);
+                $this->readFile($viewForm);     //call to actually load the contents
             }
         }
 
@@ -51,6 +54,9 @@ class template
         }
     }
 
+//----------------------------------------
+//  OPTIONAL FUNCTIONS (non-initializing):
+//----------------------------------------
 
     // Set view's default/starting variables
     function set($viewVar, $value){
@@ -58,23 +64,21 @@ class template
     }
 
 
-    // Add more variables to view
-    // If var exists, simply concatenate the new value
+    // Add more variables to view       if var exists, simply concatenate the new value
     function add($viewVars, $value){
-        if(!isset($this->vars[$viewVars])){
+        if(!isset($this->vars[$viewVars])){         //new var
             $this->set($viewVars, $value);
         } else {
-            $this->vars[$viewVars] = $this->vars[$viewVars].$value;
+            $this->vars[$viewVars] = $this->vars[$viewVars].$value;     //preexisting var
         }
     }
 
 
-    // Parse real content - replace template placeholders with view variables
-    // eg {user} with Kasutaja
+    // Parse content (replace placeholders with view variables)        eg  {user} with Kasutaja
     function parse(){
-        $content = $this->content;
+        $content = $this->content;      // Get contents pulled by readFile()    eg item.html contents: <ul>{menu_items}</ul>
         foreach ($this->viewVars as $viewVar => $value){
-            // Get contents and replace matching strings between {} with values corresponding view variables
+            //Replace placeholder (denoted with {}) with view's corresponding variable    eg {menu_items} with Ükslink      called by "set('name','Ükslink')
             $content = str_replace('{'.$viewVar.'}', $value, $content);
         }
         return $content;
