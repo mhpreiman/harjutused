@@ -12,6 +12,7 @@ class template
         $this->loadFile();      // load view's contents
     }
 
+
     // Get view's contents
     function readFile($view){
 //        $fp = fopen($f, 'rb');
@@ -19,6 +20,7 @@ class template
 //        fclose($fp);
         $this->content = file_get_contents($view);
     }
+
 
     // Load contents
     function loadFile(){
@@ -28,7 +30,6 @@ class template
             echo 'Kataloogi '.VIEWS_DIR.' ei leitud!<br>';
             exit;
         }
-
 
         // Get view's contents if it's a proper file
         // Try different nameforms for view until one calls readFile (or doesn't)
@@ -54,10 +55,15 @@ class template
             $this->readFile($view);
         }
 
-
         // If view's content hasn't been set
         if($this->content === false){
             echo 'Ei suutnud lugeda faili '.$this->view.'<br>';
         }
+    }
+
+
+    // Set view's variables
+    function set($viewVar, $value){
+        $this->vars[$viewVar] = $value;
     }
 }
