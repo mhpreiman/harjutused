@@ -8,7 +8,7 @@ class template
 
     public function __construct($view)
     {
-        $this->view = $view;    // set view's name
+        $this->view = $view;    // set view's name  (loadFile() filecheck expects identically-named html file, eg 'new template('main') expects main.html
         $this->loadFile();      // load view's contents
     }
 
@@ -31,32 +31,22 @@ class template
             exit;
         }
 
-        // Get view's contents if it's a proper file
+        // Get view's contents if it's a proper file (eg  main.html  for  new template('main')
         // Try different nameforms for view until one calls readFile (or doesn't)
-        // it's all the same code.. that ain't right... yet can't use a function (error "not in object context")
-        //Form:      views/myview.html
-        $view = $this->view;
-        if(file_exists($view) and is_file($view) and is_readable($view)){
-            $this->readFile($view);
-        }
-        //Form:      myview.html
-        $view = VIEWS_DIR.$this->view;
-        if(file_exists($view) and is_file($view) and is_readable($view)){
-            $this->readFile($view);
-        }
-        //Form:      myview
-        $view = VIEWS_DIR.$this->view.'.html';
-        if(file_exists($view) and is_file($view) and is_readable($view)){
-            $this->readFile($view);
-        }
-        //Form:      myviewfolder.myview -> views/myviewfolder/myview.html  eg  menu.menu  or  menu.item
-        $view = VIEWS_DIR.str_replace('.', '/', $this->view).'.html';
-        if(file_exists($view) and is_file($view) and is_readable($view)){
-            $this->readFile($view);
+        $viewForms = array(
+            $this->view,                            //Form:     views/myview.html
+            VIEWS_DIR.$this->view,                  //Form:     myview.html
+            VIEWS_DIR.$this->view.'.html',          //Form:     myview
+            VIEWS_DIR.str_replace('.', '/', $this->view).'.html');      //Form:      myviewfolder.myview -> views/myviewfolder/myview.html  (eg  menu.menu  or  menu.item)
+
+        foreach ($viewForms as $viewForm) {
+            if(file_exists($viewForm) and is_file($viewForm) and is_readable($viewForm)){
+                $this->readFile($viewForm);
+            }
         }
 
         // If view's content hasn't been set
-        if($this->content === false){
+        if ($this->content === false){
             echo 'Ei suutnud lugeda faili '.$this->view.'<br>';
         }
     }
