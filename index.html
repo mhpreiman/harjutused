@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <script  src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+  <title>(ülesanded)</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+<style>
+html { 
+  font-size: 10px; 
+  font-size: 62.5%; 
+} 
+body {
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 1.7em; 
+	color: dimgray;
+	text-align: center;
+}
+a {
+	text-decoration: none;
+	color: dimgray;
+}
+h2, h3 {
+	text-align: center;
+}
+h2 {
+	font-size:3.5rem;  
+	margin: 0;
+	padding:0;
+}
+h2 p {
+	display: inline;
+}
+h3 {
+	font-size:2.2rem;  
+	margin-bottom: 11rem; 
+	letter-spacing: 0.8px; 
+}
+#content { 
+	/*padding: 4.375em 11.875em;  *//*converted from 7rem 19rem*/
+	margin-top: 2rem;
+	display: flex;  
+	flex-wrap: wrap;  
+	justify-content: center;
+	align-items: normal;  
+}
+.subject {
+	display: inline-block;  
+	width: 50rem;
+	max-width: 60rem;
+	padding: 2.8em 4em 3.8em 4em;
+	  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem #d3d3d321;
+	border-radius: 0.1rem;
+	margin: 4rem 3rem;
+}
+.subject:last-of-type {
+	/*margin-right: auto;*/
+}
+#github a {
+	position: absolute;
+	font-size: 1em;
+	top: 3.2rem;
+	left: 4rem;
+	display: inline;
+	padding: 1em;
+	border: dashed  thin;
+	border-radius: 0.5em;
+	letter-spacing: 0.02em;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+span {
+	/* width: 100%;  */
+	display: block;
+}
+span a {
+	margin: 0.2em ; 
+	display: inline-block;
+}
+span a:nth-of-type(2) { 
+	font-size: 1.3rem; 
+	/* float:right;	 */
+	/* margin-top: 1.2rem;  */
+}
+/* Larger clickable area for mobile devices*/
+	a {
+		padding:0.8rem; 
+	}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1000px) {
+	.subject {
+			padding: 0;
+	}
+	#github {
+		font-size: 1.6rem;
+	}
+	#github a{
+		top: 2.5rem;
+		left: 3rem;
+	}
+	h3 {
+		margin-bottom: 5rem; 
+	}
+}
+@media only screen and (max-width: 850px) {
+	.subject {
+			margin: 1.7rem 0rem;
+	}
+	#github {
+		font-size: 1.6rem;
+	}	
+	#github a{
+		top: 2rem;
+		left: 2rem;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.subject {
+			margin: 1.7rem 0rem;
+	}
+	#github {
+		font-size: 1.4rem;
+	}	
+	#github a{
+		top: -0.3rem;
+		left:  0rem;
+		padding: 0.9em;
+		border: 0;
+		letter-spacing: 0.1rem;
+	}
+}
+@media only screen and (max-width: 580px) {
+	#content {
+		padding: 0rem;
+		margin-top: 5.5rem; 
+	}
+	.subject {
+			margin: 0rem 0rem;
+			padding: 0;
+	}
+	.left, .right { 
+		float: none !important; 
+	}
+}
+@media only screen and (max-width: 400px) {
+	h2 {
+		font-size: 3rem; 
+	}
+	h3 {
+		font-size: 2rem; 
+	}
+	#github {
+		bottom: 0;
+	}
+}
+@media only screen and (max-width: 350px) {
+	body {
+		font-size:1.6rem; 
+	}
+	h2, h3 {
+		font-size:2.5rem; 
+	}
+	h3 {
+		font-size: 1.8rem; 
+	}
+}
+</style>
+  </head>
+<body>
+  <div id="content">
+	<div class="subject">
+		<h2>Funktsionaalne <p>PHP</p></h2>
+		<h3>(PHP alused)</h3>
+		<span id="github"><a  href="https://github.com/mhpreiman/harjutused/tree/php-funktsionaalne">github</a></span>
+		
+		<div class="left">
+			<span>
+				<a  href="vordlused.php">vordlused.php</a>
+				<a  href="democode.php?vaatakoodi=vordlused">PHP</a>
+			</span><br>
+			<span>
+				<a  href="tingimused.php">tingimused.php</a>
+				<a  href="democode.php?vaatakoodi=tingimused">PHP</a>
+			</span><br>
+			<span>
+				<a  href="tsuklid.php">tsuklid.php</a>
+				<a  href="democode.php?vaatakoodi=tsuklid">PHP</a>
+			</span><br>
+			<span>
+				<a  href="varviline-tekst.php">varviline-tekst.php</a>
+				<a  href="democode.php?vaatakoodi=varviline-tekst">PHP</a>
+			</span><br>
+			<span>
+				<a  href="funktsioonid.php">funktsioonid.php</a>
+				<a  href="democode.php?vaatakoodi=funktsioonid">PHP</a>
+			</span><br>
+			<span>
+				<a  href="funktsioonid2.php">funktsioonid2.php</a>
+				<a  href="democode.php?vaatakoodi=funktsioonid2">PHP</a>
+			</span><br>
+			<span>
+				<a  href="massiivid.php">massiivid.php</a>
+				<a  href="democode.php?vaatakoodi=massiivid">PHP</a>
+			</span><br>
+			<span>
+				<a  href="massiivid2.php">massiivid2.php</a>
+				<a  href="democode.php?vaatakoodi=massiivid2">PHP</a>
+			</span><br>
+			<span>
+				<a  href="vormid.php">vormid.php</a>
+				<a  href="democode.php?vaatakoodi=vormid">PHP</a>
+			</span><br>
+			<span>
+				<a  href="sisend.php">sisend.php</a>
+				<a  href="democode.php?vaatakoodi=sisend">PHP</a>
+			</span><br>
+			<span>
+				<a >salvestus.php</a>
+				<a  href="democode.php?vaatakoodi=salvestus">PHP</a>
+			</span><br>
+		</div>
+		<div class="right">
+			<span>
+				<a  href="valjund.php">valjund.php</a>
+				<a  href="democode.php?vaatakoodi=valjund">PHP</a>
+			</span><br>
+			<span>
+				<a  href="andmed.php">andmed.php</a>
+				<a  href="democode.php?vaatakoodi=andmed">PHP</a>
+			</span><br>
+			<span>
+				<a>andmed2.php</a>
+				<a  href="democode.php?vaatakoodi=andmed2">PHP</a>
+			</span><br>
+			<span>
+				<a  href="aeg.php">aeg.php</a>
+				<a  href="democode.php?vaatakoodi=aeg">PHP</a>
+			</span><br>
+			<span>
+				<a  href="andmebaas.php">andmebaas.php</a>
+				<a  href="democode.php?vaatakoodi=andmebaas">PHP</a>
+			</span><br>
+			<span>
+				<a  href="tekst-test.php">tekst-test.php</a>
+				<a  href="democode.php?vaatakoodi=tekst-test">PHP</a>
+			</span><br>
+			<span>
+				<a  href="tabel-test.php">tabel-test.php</a>
+				<a  href="democode.php?vaatakoodi=tabel-test">PHP</a>
+			</span><br>
+			<span>
+				<a>tabel.php</a>
+				<a  href="democode.php?vaatakoodi=tabel">PHP</a>
+			</span><br>
+			<span>
+				<a>varvilineTekst.php</a>
+				<a  href="democode.php?vaatakoodi=varvilineTekst">PHP</a>
+			</span><br>
+			<span>
+				<a>tabelHTML.php</a>
+				<a  href="democode.php?vaatakoodi=tabelHTML">PHP</a>
+			</span><br>
+		</div>
+	</div>
+ </div>
+</body>
+</html>
