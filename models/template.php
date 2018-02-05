@@ -4,7 +4,7 @@ class template
 {
     var $view = '';
     var $content = false;
-    var $vars = array();
+    var $viewVars = array();
 
     public function __construct($view)
     {
@@ -64,6 +64,18 @@ class template
 
     // Set view's variables
     function set($viewVar, $value){
-        $this->vars[$viewVar] = $value;
+        $this->viewVars[$viewVar] = $value;
+    }
+
+
+    // Set real content - Replace template placeholders with view variables
+    // eg {user} with Kasutaja
+    function parse(){
+        $content = $this->content;
+        foreach ($this->viewVars as $viewVar => $value){
+            // Get contents and replace matching strings between {} with values corresponding view variables
+            $content = str_replace('{'.$viewVar.'}', $value, $content);
+        }
+        return $content;
     }
 }
