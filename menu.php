@@ -1,29 +1,29 @@
 <?php
+// $menuTmpl - menu
+// $itemTmpl - menu item
+// $mainTmpl - main template
 
-// Menu template
-$menuTmpl = new template('menu.menu');
+// MENU
+$menuTmpl = new template('menu.menu');  // Menu template
 
-// Menu item template
-$itemTmpl = new template('menu.item');
-// Set menu item variable 'name'
-$itemTmpl->set('name','Ükslink');
+// MENU ITEM
+$itemTmpl = new template('menu.item');  // Menu item template
+$itemTmpl->set('name','Ükslink');       // Assign 'Ükslink' to menu item var 'name'
 
-
-// Set item as the menu's variable
-//Get the content of menu.item - then set that to menu template var 'menu_items'
-$setMenuItem = $itemTmpl->parse();
-$menuTmpl->set('menu_items', $setMenuItem);
-
-// Parse menu variable content, then set that parsed content to menu var 'menu'
-$menu = $menuTmpl->parse();
-$mainTmpl->add('menu',$menu);
+// MENU
+// Assign parsed menu item to menu var 'menu_items'     effectively the same as add() since it's the first var assignment to $menuTmpl
+$menuTmpl->add('menu_items', $itemTmpl->parse());
 
 
-// Create another menu item
-$itemTmpl->set('name','Teinelink');       // Set item value
-$menuItem = $itemTmpl->parse();           // Set item content to that item (value)
-$menuTmpl->add('menu_items',$menuItem);   // Concatenate the new item to menu var menu_items
 
-// Parse whole menu
-$menu = $menuTmpl->parse();       // Get contents
-$mainTmpl->set('menu', $menu);    // Show on view
+// ...Create another menu item...       (use same code from line 11 and 15 (set() is basically add())
+// MENU ITEM
+$itemTmpl->set('name','Teinelink');                 // Set item value
+// MENU
+$menuTmpl->add('menu_items', $itemTmpl->parse());   // Add another parsed menu item to menu var 'menu_items'
+
+
+
+// MAIN
+// Assign-parse the whole previously created menu to MAIN template var 'menu'
+$mainTmpl->set('menu', $menuTmpl->parse());

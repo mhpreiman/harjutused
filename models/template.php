@@ -4,7 +4,7 @@ class template
 {
     // Variables and methods set/triggered on correct
     // object initiliazation:       $view   $content        loadFile()  readFile()
-    // Separately called:           $viewVars   $content    set()   add()   parse
+    // Separately called:           $viewVars   $content    set()   add()   parse()
     var $view = '';
     var $content = false;
     var $viewVars = array();

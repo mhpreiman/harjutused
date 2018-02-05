@@ -12,8 +12,5 @@ $mainTmpl->set('lang_bar','Keeleriba');
 require_once 'menu.php';
 $mainTmpl->set('content','Lehe sisu');
 
-echo '<pre>';
-print_r($mainTmpl);
-echo '</pre>';
-
+// Actually render the whole MAIN object
 echo $mainTmpl->parse();
