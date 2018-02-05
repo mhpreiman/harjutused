@@ -16,4 +16,14 @@ $menuTmpl->set('menu_items', $setMenuItem);
 
 // Parse menu variable content, then set that parsed content to menu var 'menu'
 $menu = $menuTmpl->parse();
-$mainTmpl->set('menu',$menu);
+$mainTmpl->add('menu',$menu);
+
+
+// Create another menu item
+$itemTmpl->set('name','Teinelink');       // Set item value
+$menuItem = $itemTmpl->parse();           // Set item content to that item (value)
+$menuTmpl->add('menu_items',$menuItem);   // Concatenate the new item to menu var menu_items
+
+// Parse whole menu
+$menu = $menuTmpl->parse();       // Get contents
+$mainTmpl->set('menu', $menu);    // Show on view

@@ -62,9 +62,20 @@ class template
     }
 
 
-    // Set view's variables
+    // Set view's default/starting variables
     function set($viewVar, $value){
         $this->viewVars[$viewVar] = $value;
+    }
+
+
+    // Add more variables to view
+    // If var exists, simply concatenate the new value
+    function add($viewVars, $value){
+        if(!isset($this->vars[$viewVars])){
+            $this->set($viewVars, $value);
+        } else {
+            $this->vars[$viewVars] = $this->vars[$viewVars].$value;
+        }
     }
 
 
