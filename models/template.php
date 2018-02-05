@@ -49,7 +49,7 @@ class template
         if(file_exists($view) and is_file($view) and is_readable($view)){
             $this->readFile($view);
         }
-        //Form:      somefolder.myview -> views/somefolder/myview.html
+        //Form:      myviewfolder.myview -> views/myviewfolder/myview.html  eg  menu.menu  or  menu.item
         $view = VIEWS_DIR.str_replace('.', '/', $this->view).'.html';
         if(file_exists($view) and is_file($view) and is_readable($view)){
             $this->readFile($view);
@@ -68,7 +68,7 @@ class template
     }
 
 
-    // Set real content - Replace template placeholders with view variables
+    // Parse real content - replace template placeholders with view variables
     // eg {user} with Kasutaja
     function parse(){
         $content = $this->content;
