@@ -21,4 +21,14 @@ class http
             }
         }
     }
+
+
+    // Get value of query parameter if in array
+    function get($qParameter){
+        if(isset($this->queryParameters[$qParameter])){
+            return $this->queryParameters[$qParameter];
+        } else {
+            return false;
+        }
+    }
 }

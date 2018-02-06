@@ -19,9 +19,9 @@ echo '<pre>';
 print_r($http);
 echo '</pre>';
 
-echo HTTP_HOST.SCRIPT_NAME.'<br>';     //complete path (less the protocol)
-echo $http->baseLink.'<br>';
 
-$newQueryString = array('control'=>'login', 'user'=>'test');
-$link = $http->getLink($newQueryString);
-echo $link.'<br>';
+//$newQueryString = array('control'=>'login', 'user'=>'test');
+//$link = $http->getLink($newQueryString);
+//echo $link.'<br>';
+
+echo $http->get('control');
