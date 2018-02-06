@@ -14,3 +14,9 @@ $mainTmpl->set('content','Lehe sisu');
 
 // Actually render the whole MAIN object
 echo $mainTmpl->parse();
+
+echo '<pre>';
+print_r($http);
+echo '</pre>';
+
+echo HTTP_HOST.SCRIPT_NAME;     //complete path
