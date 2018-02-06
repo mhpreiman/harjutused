@@ -22,3 +22,5 @@ echo $mainTmpl->parse();
 //echo $link.'<br>';
 
 echo $http->get('control');
+
+$db->query('SELECT NOW()');

@@ -25,4 +25,15 @@ class mysql
             exit;
         }
     }
+
+
+    // Run a database query
+    function query($query){
+        $result = mysqli_query($this->conn, $query);
+        if(!$result){
+            echo 'Probleem päringuga '.$query;
+            return false;
+        }
+        return $result;
+    }
 }
