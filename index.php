@@ -17,11 +17,6 @@ $mainTmpl->set('content','Lehe sisu');
 // Actually render the whole MAIN object
 echo $mainTmpl->parse();
 
-echo '<pre>';
-print_r($http);
-echo '</pre>';
-
-
 //$newQueryString = array('control'=>'login', 'user'=>'test');
 //$link = $http->getLink($newQueryString);
 //echo $link.'<br>';

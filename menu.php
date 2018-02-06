@@ -8,7 +8,14 @@ $menuTmpl = new template('menu.menu');  // Menu template
 
 // MENU ITEM
 $itemTmpl = new template('menu.item');  // Menu item template
-$itemTmpl->set('linkname','Ükslink');       // Assign 'Ükslink' to menu item var 'linkname'
+
+// MENU ITEM    - Avaleht
+$itemTmpl->set('linkname','Avaleht');
+$itemTmpl->set('link',$http->getLink());
+$menuTmpl->add('menu_items',$itemTmpl->parse());
+
+// MENU ITEM    - Üks link
+$itemTmpl->set('linkname','Üks link');       // Assign 'Ükslink' to menu item var 'linkname'
 $getLink = $http->getLink(array('control'=>'esimene'));     //get full link with query string ?control=esimene
 $itemTmpl->set('link',$getLink);    //use acquired link for menu item
 
@@ -17,10 +24,9 @@ $itemTmpl->set('link',$getLink);    //use acquired link for menu item
 $menuTmpl->add('menu_items', $itemTmpl->parse());
 
 
-
 // ...Create another menu item...       (use same code from line 11 and 15 (set() is basically add())
-// MENU ITEM
-$itemTmpl->set('linkname','Teinelink');                 // Set item value
+// MENU ITEM    - Teine link
+$itemTmpl->set('linkname','Teine link');                 // Set item value
 $getLink = $http->getLink(array('control'=>'teine'));
 $itemTmpl->set('link', $getLink);
 // MENU
