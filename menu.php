@@ -11,7 +11,8 @@ $itemTmpl = new template('menu.item');  // Menu item template
 
 // MENU ITEM    - Avaleht
 $itemTmpl->set('linkname','Avaleht');
-$itemTmpl->set('link',$http->getLink());
+$getLink = $http->getLink(array('control'=>'avaleht'));
+$itemTmpl->set('link',$getLink);
 $menuTmpl->add('menu_items',$itemTmpl->parse());
 
 // MENU ITEM    - Üks link

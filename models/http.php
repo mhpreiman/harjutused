@@ -31,4 +31,10 @@ class http
             return false;
         }
     }
+
+
+    // Set an arbitrary value to an array query parameter
+    function set($qParameter, $qPValue){
+        $this->queryParameters[$qParameter] = $qPValue;
+    }
 }

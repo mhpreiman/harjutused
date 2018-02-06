@@ -7,5 +7,6 @@ if(file_exists($file) and is_file($file) and is_readable($file)){
     require_once $file;
 } else {
     $file = CONTROL_DIR.DEFAULT_CONTROLLER.'.php';
+    $http->set('control',DEFAULT_CONTROLLER);
     require_once $file;
 }
