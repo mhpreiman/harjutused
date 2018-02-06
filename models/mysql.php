@@ -36,4 +36,19 @@ class mysql
         }
         return $result;
     }
+
+
+    // Fetch database rows
+    function getData($query){
+        $result = $this->query($query); // saadame päring andmebaasi
+        $data = array();
+
+        while ($row = mysqli_fetch_assoc($result)){     //fetch row as an associative array
+            $data[] = $row;
+        }
+        if(count($data) == 0){      //if no rows returned
+            return false;
+        }
+        return $data;
+    }
 }

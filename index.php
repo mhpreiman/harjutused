@@ -23,4 +23,8 @@ echo $mainTmpl->parse();
 
 echo $http->get('control');
 
-$db->query('SELECT NOW()');
+
+$hetkeKell = $db->getData('SELECT NOW()');
+echo '<pre>';
+print_r($hetkeKell);
+echo '</pre>';
