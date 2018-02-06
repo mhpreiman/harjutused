@@ -9,6 +9,16 @@ $menuTmpl = new template('menu.menu');  // Menu template
 // MENU ITEM
 $itemTmpl = new template('menu.item');  // Menu item template
 
+// MENU
+// Select menu
+$sql =  'SELECT content_id, content, title '.
+        'FROM content WHERE parent_id='.fixDB(0).
+        ' AND show_in_menu='.fixDB(1);
+$result = $db->getData($sql);
+echo '<pre>';
+print_r($result);
+echo '</pre>';
+
 // MENU ITEM    - Avaleht
 $itemTmpl->set('linkname','Avaleht');
 $getLink = $http->getLink(array('control'=>'avaleht'));
