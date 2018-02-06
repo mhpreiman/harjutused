@@ -20,6 +20,6 @@ class linkobject extends http
             $queryString .= $this->delim;  // param=val  ->  param=val&
         }
         //Add a query parameter and value to query string      ->  param=val / param=val&param2=val
-        $queryString .= $queryParam.$this->eq.$queryParamVal;
+        $queryString .= fixUrl($queryParam).$this->eq.fixUrl($queryParamVal);
     }
 }
