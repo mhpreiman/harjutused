@@ -19,4 +19,5 @@ echo '<pre>';
 print_r($http);
 echo '</pre>';
 
-echo HTTP_HOST.SCRIPT_NAME;     //complete path
+echo HTTP_HOST.SCRIPT_NAME.'<br>';     //complete path (less the protocol)
+echo $http->baseLink;
