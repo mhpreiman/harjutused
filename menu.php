@@ -8,7 +8,7 @@ $menuTmpl = new template('menu.menu');  // Menu template
 
 // MENU ITEM
 $itemTmpl = new template('menu.item');  // Menu item template
-$itemTmpl->set('name','Ükslink');       // Assign 'Ükslink' to menu item var 'name'
+$itemTmpl->set('linkname','Ükslink');       // Assign 'Ükslink' to menu item var 'linkname'
 $getLink = $http->getLink(array('control'=>'esimene'));     //get full link with query string ?control=esimene
 $itemTmpl->set('link',$getLink);    //use acquired link for menu item
 
@@ -20,7 +20,7 @@ $menuTmpl->add('menu_items', $itemTmpl->parse());
 
 // ...Create another menu item...       (use same code from line 11 and 15 (set() is basically add())
 // MENU ITEM
-$itemTmpl->set('name','Teinelink');                 // Set item value
+$itemTmpl->set('linkname','Teinelink');                 // Set item value
 $getLink = $http->getLink(array('control'=>'teine'));
 $itemTmpl->set('link', $getLink);
 // MENU
