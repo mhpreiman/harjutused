@@ -4,6 +4,8 @@ require_once 'conf.php';
 
 $mainTmpl = new template('main');
 
+require_once 'controller.php';
+
 $mainTmpl->set('site_lang','et');
 $mainTmpl->set('site_title','PV');
 $mainTmpl->set('user','Kasutaja');
