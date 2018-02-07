@@ -1,8 +1,8 @@
 <?php
 
-// Get value of query string 'controller'               eg  ?controller=esimene
+// Get value of query string 'page_id'               eg  ?page_id=esimene
 // and use it to request identically named controller   eg  controllers/esimene.php
-$controller = $http->get('controller');
+$controller = $http->get('page_id');       // get value of queryparameter 'page_id'
 $file = CONTROL_DIR.$controller.'.php';    // controller's full path
 
 if(file_exists($file) and is_file($file) and is_readable($file)){

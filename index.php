@@ -20,4 +20,4 @@ echo $mainTmpl->parse();
 //$newQueryString = array('control'=>'login', 'user'=>'test');
 //$link = $http->getLink($newQueryString);
 //echo $link.'<br>';
-//echo $http->get('controller');
+//echo $http->get('page_id');
