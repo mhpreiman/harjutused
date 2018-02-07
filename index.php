@@ -12,13 +12,12 @@ $mainTmpl->set('user','Kasutaja');
 $mainTmpl->set('title','Pealkiri');
 $mainTmpl->set('lang_bar','Keeleriba');
 require_once 'menu.php';
-$mainTmpl->set('content','Lehe sisu');
+//$mainTmpl->set('content','Lehe sisu');
 
-// Actually render the whole MAIN object
+// Parse and render (echo) the whole MAIN object
 echo $mainTmpl->parse();
 
 //$newQueryString = array('control'=>'login', 'user'=>'test');
 //$link = $http->getLink($newQueryString);
 //echo $link.'<br>';
-
-echo $http->get('control');
+//echo $http->get('controller');
