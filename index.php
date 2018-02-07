@@ -22,9 +22,3 @@ echo $mainTmpl->parse();
 //echo $link.'<br>';
 
 echo $http->get('control');
-
-
-$hetkeKell = $db->getData('SELECT NOW()');
-echo '<pre>';
-print_r($hetkeKell);
-echo '</pre>';

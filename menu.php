@@ -3,48 +3,35 @@
 // $itemTmpl - menu item
 // $mainTmpl - main template
 
-// MENU
 $menuTmpl = new template('menu.menu');  // Menu template
-
-// MENU ITEM
 $itemTmpl = new template('menu.item');  // Menu item template
 
-// MENU
-// Select menu
+
+// MENU and MENU ITEMS:     select menu items from database and set them to menu
 $sql =  'SELECT content_id, content, title '.
         'FROM content WHERE parent_id='.fixDB(0).
         ' AND show_in_menu='.fixDB(1);
+
 $result = $db->getData($sql);
-echo '<pre>';
-print_r($result);
-echo '</pre>';
 
-// MENU ITEM    - Avaleht
-$itemTmpl->set('linkname','Avaleht');
-$getLink = $http->getLink(array('control'=>'avaleht'));
-$itemTmpl->set('link',$getLink);
-$menuTmpl->add('menu_items',$itemTmpl->parse());
+if($result != false){
+    foreach ($result as $page){
 
-// MENU ITEM    - Üks link
-$itemTmpl->set('linkname','Üks link');       // Assign 'Ükslink' to menu item var 'linkname'
-$getLink = $http->getLink(array('control'=>'esimene'));     //get full link with query string ?control=esimene
-$itemTmpl->set('link',$getLink);    //use acquired link for menu item
+        //Set link name                 eg  Minu pealkiri
+        $itemTmpl->set('linkname',$page['title']);
 
-// MENU
-// Assign parsed menu item to menu var 'menu_items'     effectively the same as add() since it's the first var assignment to $menuTmpl
-$menuTmpl->add('menu_items', $itemTmpl->parse());
+        //Create full url with query parameters (eg  page_id=2)
+        $getLink = $http->getLink(array('page_id' => $page['content_id']));
 
+        //Set link to created url       eg  http://localhost/php-oop/index.php?page_id=2
+        $itemTmpl->set('link',$getLink);
 
-// ...Create another menu item...       (use same code from line 11 and 15 (set() is basically add())
-// MENU ITEM    - Teine link
-$itemTmpl->set('linkname','Teine link');                 // Set item value
-$getLink = $http->getLink(array('control'=>'teine'));
-$itemTmpl->set('link', $getLink);
-// MENU
-$menuTmpl->add('menu_items', $itemTmpl->parse());   // Add another parsed menu item to menu var 'menu_items'
+        //Attach parsing of previously constructed MENU ITEM to MENU object
+        $menuTmpl->add('menu_items',$itemTmpl->parse());
+
+    }
+}
 
 
-
-// MAIN
-// Assign-parse the whole previously created menu to MAIN template var 'menu'
+// MAIN:    attach parsing of MENU to MAIN object (to its $viewVars 'menu' key)
 $mainTmpl->set('menu', $menuTmpl->parse());

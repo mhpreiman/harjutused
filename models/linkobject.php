@@ -28,7 +28,7 @@ class linkobject extends http
     function getLink($add = array()){           //input such as 'category'=>'computers', 'price'=>'200'
         $queryStr = '';
         //Loop through received key-value pairs and make them into a query string
-        foreach ($add as $queryPar=>$queryPVal){
+        foreach ($add as $queryPar=>$queryPVal){        //eg page_id=2
             $this->addQueryParams($queryStr, $queryPar, $queryPVal);
         }
         if($queryStr != ''){
